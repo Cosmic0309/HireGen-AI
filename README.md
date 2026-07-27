@@ -113,7 +113,6 @@ HireGen-AI/
 │   ├── signup.html
 │   ├── recruiter_dashboard.html
 │   ├── candidate_dashboard.html
-│   ├── interview.html
 │
 ├── uploads/
 │
@@ -162,9 +161,9 @@ Recruiter Dashboard
 # 📸 Screenshots
 
 ## Login / Signup
-
+```
 <img width="1917" height="1078" alt="Screenshot 2026-07-27 130754" src="https://github.com/user-attachments/assets/ebdd6d6b-496a-432c-b3bb-76dcab267365" />
-
+```
 
 ```
 <img width="1917" height="1078" alt="Screenshot 2026-07-27 130814" src="https://github.com/user-attachments/assets/749af5bd-c9ce-4659-9224-efd2dce018c2" />
@@ -175,24 +174,28 @@ Recruiter Dashboard
 
 ## Recruiter Dashboard
 
+
+```
 <img width="1917" height="1078" alt="Screenshot 2026-07-27 125325" src="https://github.com/user-attachments/assets/73b06b4b-8562-410b-86f2-7710234e141d" />
-
+```
 <img width="1917" height="1078" alt="Screenshot 2026-07-27 125337" src="https://github.com/user-attachments/assets/eb384851-5a5e-4b69-ab64-3cbfe614b211" />
-
+```
 <img width="1731" height="815" alt="Screenshot 2026-07-27 125345" src="https://github.com/user-attachments/assets/f7b87b76-02ef-4442-9bf8-f2cf0089b436" />
-
+```
 <img width="1917" height="1078" alt="Screenshot 2026-07-27 125355" src="https://github.com/user-attachments/assets/cc75e094-6079-4a4b-b60c-439b378a59e6" />
+```
 
 ---
 
 ## Candidate Dashboard
 
-> Add screenshot here
-
 ```
-images/candidate-dashboard.png
+<img width="1900" height="1078" alt="Screenshot 2026-07-27 125518" src="https://github.com/user-attachments/assets/44fb86de-163f-489b-9bb5-340b6e09ba05" />
 ```
-
+<img width="1901" height="1078" alt="Screenshot 2026-07-27 125530" src="https://github.com/user-attachments/assets/269ad448-76d2-41ef-8eb0-f80582c3e68e" />
+```
+<img width="1897" height="1078" alt="Screenshot 2026-07-27 125604" src="https://github.com/user-attachments/assets/c37520aa-73e3-4aaa-8999-a91800ef1019" />
+```
 ---
 
 # 📖 Dashboard Modules
@@ -399,14 +402,8 @@ pip install -r requirements.txt
 # 👥 Authors
 
 **AI Architects**
-
+Bhupesh and Ankita
 National Institute of Technology Delhi
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
 
 ---
 
@@ -419,14 +416,6 @@ If you found this project useful,
 🍴 Fork the repository
 
 📢 Share your feedback
-
----
-
-# 📧 Contact
-
-For queries regarding this project,
-
-Create an Issue on GitHub.
 
 ---
 
