@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireGen AI | Create Your Account</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+    <!-- Canvas for Confetti Effect -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Background Ambient Glow & Grid -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- TOP FLOATING GLASS NAVBAR -->
+    <header class="navbar-wrapper">
+        <nav class="navbar glass-navbar">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="5" width="14" height="14" rx="3" stroke="#00E5FF" stroke-width="2"/>
+                        <rect x="9" y="9" width="6" height="6" fill="#00E5FF" rx="1"/>
+                        <path d="M9 2V5M15 2V5M9 19V22M15 19V22M2 9H5M2 15H5M19 9H22M19 15H22" stroke="#00E5FF" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="brand-name">HireGen AI</span>
+            </a>
+
+            <div class="nav-actions">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="signup.html" class="btn-nav-gradient">Create Account</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN PAGE CONTENT -->
+    <main class="page-wrapper">
+        <div class="signup-grid">
+
+            <!-- LEFT PANEL: Brand Info & Terminal -->
+            <section class="left-panel">
+                <div class="badge-container">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        <span>Next-Gen Hiring Platform</span>
+                    </div>
+                </div>
+
+                <h1 class="main-title">
+                    Build Your <span class="gradient-text">Future</span>
+                </h1>
+
+                <p class="main-description">
+                    Join HireGen AI to experience intelligent hiring powered by AI resume screening, ATS scoring, AI interviews, and smart candidate ranking.
+                </p>
+
+                <!-- Dynamic Animated Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number gradient-text">20K+</span>
+                        <span class="stat-label">Resumes Parsed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number gradient-text">94%</span>
+                        <span class="stat-label">ATS Accuracy</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number gradient-text">10x</span>
+                        <span class="stat-label">Hiring Speed</span>
+                    </div>
+                </div>
+
+                <!-- Floating AI Terminal Window -->
+                <div class="terminal-card glass-panel">
+                    <div class="window-header">
+                        <div class="window-controls">
+                            <span class="dot close"></span>
+                            <span class="dot minimize"></span>
+                            <span class="dot maximize"></span>
+                        </div>
+                        <span class="window-title">HireGen Core Engine v2.4</span>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="terminal-line">
+                            <span class="prompt">&gt;</span>
+                            <span id="typing-text" class="typing-text"></span>
+                            <span class="cursor"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT PANEL: Glassmorphism Signup Form -->
+            <section class="right-panel">
+                <div class="form-card glass-panel">
+                    
+                    <div class="form-header">
+                        <h2>Create Account</h2>
+                        <p>Start your AI recruitment journey.</p>
+                    </div>
+
+                    <!-- Role Switcher -->
+                    <div class="role-selector-wrapper">
+                        <div class="role-selector">
+                            <div class="role-slider" id="role-slider"></div>
+                            <button type="button" class="role-btn active" id="btn-recruiter" data-role="recruiter">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+                                Recruiter
+                            </button>
+                            <button type="button" class="role-btn" id="btn-candidate" data-role="candidate">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                Candidate
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Signup Form -->
+                    <form id="signup-form" novalidate>
+                        
+                        <!-- Full Name -->
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="fullname" name="fullname" placeholder="Sarah Jenkins" required>
+                                <svg class="input-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <span class="error-msg" id="error-fullname"></span>
+                        </div>
+
+                        <!-- Email & Phone Grid -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <div class="input-wrapper">
+                                    <input type="email" id="email" name="email" placeholder="sarah@company.com" required>
+                                    <svg class="input-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                </div>
+                                <span class="error-msg" id="error-email"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <div class="input-wrapper">
+                                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                                    <svg class="input-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </div>
+                                <span class="error-msg" id="error-phone"></span>
+                            </div>
+                        </div>
+
+                        <!-- RECRUITER CONDITIONAL FIELDS -->
+                        <div id="recruiter-fields" class="conditional-section active">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="company-name">Company Name</label>
+                                    <div class="input-wrapper">
+                                        <input type="text" id="company-name" name="company_name" placeholder="Acme Technologies">
+                                        <svg class="input-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg>
+                                    </div>
+                                    <span class="error-msg" id="error-company-name"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="company-website">Company Website</label>
+                                    <div class="input-wrapper">
+                                        <input type="url" id="company-website" name="company_website" placeholder="https://acme.com">
+                                        <svg class="input-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                    </div>
+                                    <span class="error-msg" id="error-company-website"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="company-industry">Industry</label>
+                                    <div class="input-wrapper">
+                                        <input type="text" id="company-industry" name="company_industry" placeholder="SaaS / AI Software">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="company-size">Company Size</label>
+                                    <select id="company-size" name="company_size" class="custom-select">
+                                        <option value="1-10">1-10 employees</option>
+                                        <option value="11-50">11-50 employees</option>
+                                        <option value="51-200" selected>51-200 employees</option>
+                                        <option value="201-1000">201-1000 employees</option>
+                                        <option value="1000+">1000+ employees</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="recruiter-designation">Designation</label>
+                                    <div class="input-wrapper">
+                                        <input type="text" id="recruiter-designation" name="recruiter_designation" placeholder="Head of Talent Acquisition">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hiring-frequency">Hiring Frequency</label>
+                                    <select id="hiring-frequency" name="hiring_frequency" class="custom-select">
+                                        <option value="Immediate">Immediate Needs</option>
+                                        <option value="Monthly">Monthly</option>
+                                        <option value="Quarterly">Quarterly</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                           
+                        </div>
+
+                        <!-- CANDIDATE CONDITIONAL FIELDS -->
+                        <div id="candidate-fields" class="conditional-section">
+                            
+                            <!-- Resume Upload Zone -->
+                            <div class="form-group">
+                                <label>Upload Resume (PDF only, Max 10MB)</label>
+                                <div class="file-dropzone" id="resume-dropzone">
+                                    <input type="file" id="resume-file" name="resume" accept="application/pdf">
+                                    <div class="dropzone-inner" id="resume-dropzone-content">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                                        <p class="dropzone-text" id="resume-filename">Drag & Drop resume PDF here or <span>browse</span></p>
+                                    </div>
+                                    
+                                    <!-- File Details & Upload Progress -->
+                                    <div id="resume-file-info" class="file-info-badge hidden">
+                                        <div class="file-details">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                                            <span id="file-name-display">resume.pdf</span>
+                                            <span id="file-size-display" class="file-size">1.2 MB</span>
+                                        </div>
+                                        <button type="button" class="btn-remove-file" id="remove-resume-btn">&times;</button>
+                                    </div>
+                                    <div class="progress-bar-container hidden" id="upload-progress-container">
+                                        <div class="progress-bar-fill" id="upload-progress-bar"></div>
+                                    </div>
+                                </div>
+                                <span class="error-msg" id="error-resume-file"></span>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="linkedin-url">LinkedIn Profile</label>
+                                    <div class="input-wrapper">
+                                        <input type="url" id="linkedin-url" name="linkedin_url" placeholder="https://linkedin.com/in/username">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="github-url">GitHub Profile</label>
+                                    <div class="input-wrapper">
+                                        <input type="url" id="github-url" name="github_url" placeholder="https://github.com/username">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="preferred-role">Preferred Job Role</label>
+                                    <div class="input-wrapper">
+                                        <input type="text" id="preferred-role" name="preferred_role" placeholder="Senior Frontend Engineer">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="experience-level">Experience Level</label>
+                                    <select id="experience-level" name="experience_level" class="custom-select">
+                                        <option value="Entry Level">Entry Level (0-2 yrs)</option>
+                                        <option value="Mid Level" selected>Mid Level (3-5 yrs)</option>
+                                        <option value="Senior Level">Senior Level (5+ yrs)</option>
+                                        <option value="Lead Level">Lead / Manager</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="password" name="password" placeholder="••••••••••••" required>
+                                <button type="button" class="toggle-pwd" data-target="password" aria-label="Toggle Password">
+                                    <svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                            
+                            <div class="strength-meter-container">
+                                <div class="strength-bar-bg">
+                                    <div class="strength-bar-fill" id="strength-bar"></div>
+                                </div>
+                                <span class="strength-label" id="strength-text">Password strength</span>
+                            </div>
+                            <span class="error-msg" id="error-password"></span>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="confirm-password" placeholder="••••••••••••" required>
+                                <button type="button" class="toggle-pwd" data-target="confirm-password" aria-label="Toggle Confirm Password">
+                                    <svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                            <span class="error-msg" id="error-confirm-password"></span>
+                        </div>
+
+                        <!-- Terms Checkbox -->
+                        <div class="form-group checkbox-group">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="terms-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">I agree to the <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a></span>
+                            </label>
+                            <span class="error-msg" id="error-terms"></span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submit-btn" class="btn-primary-gradient" disabled>
+                            <span class="btn-text">Create Account</span>
+                            <span class="spinner" id="btn-spinner"></span>
+                        </button>
+                    </form>
+
+                    <div class="divider">
+                        <span>OR CONTINUE WITH</span>
+                    </div>
+
+                    <!-- Social Signup Grid -->
+                    <div class="social-signup-grid">
+                        <button type="button" class="social-btn disabled" title="Social login disabled. Use email signup.">
+                            <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.9C6.2 7.2 8.8 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.3 14.8c-.2-.7-.4-1.5-.4-2.3s.2-1.6.4-2.3L1.6 7.3C.6 9.3 0 11.6 0 14s.6 4.7 1.6 6.7l3.7-2.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.2 0-5.8-2.2-6.7-5.3L1.6 16C3.5 19.8 7.4 23 12 23z"/></svg>
+                            Google
+                        </button>
+
+                        <button type="button" class="social-btn disabled" title="Social login disabled. Use email signup.">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                            GitHub
+                        </button>
+
+                        <button type="button" class="social-btn disabled" title="Social login disabled. Use email signup.">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z"/></svg>
+                            LinkedIn
+                        </button>
+                    </div>
+
+                    <div class="card-footer">
+                        Already have an account? <a href="login.html" class="link-highlight">Login</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- AI PROCESSING STEPPER OVERLAY MODAL -->
+    <div id="ai-modal-overlay" class="modal-overlay hidden">
+        <div class="modal-card glass-panel text-center">
+            <div class="ai-brain-container">
+                <svg class="ai-brain-icon" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="1.5">
+                    <path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                </svg>
+            </div>
+            <h3 class="modal-title gradient-text">HireGen AI Processing</h3>
+            <p class="modal-subtext">Setting up your profile & parsing intelligence...</p>
+
+            <ul class="ai-stepper" id="ai-stepper">
+                <li class="step-item" id="step-1"><span class="step-icon"></span> Creating Account</li>
+                <li class="step-item" id="step-2"><span class="step-icon"></span> Uploading Resume</li>
+                <li class="step-item" id="step-3"><span class="step-icon"></span> Parsing Resume</li>
+                <li class="step-item" id="step-4"><span class="step-icon"></span> Extracting Skills</li>
+                <li class="step-item" id="step-5"><span class="step-icon"></span> Generating ATS Score</li>
+                <li class="step-item" id="step-6"><span class="step-icon"></span> Finalizing Profile</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PREMUM SUCCESS MODAL WITH REDIRECT COUNTDOWN -->
+    <div id="success-modal-overlay" class="modal-overlay hidden">
+        <div class="modal-card glass-panel text-center success-card">
+            <div class="success-icon-badge">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h2 class="gradient-text">Account Created!</h2>
+            <p class="modal-subtext">Welcome to HireGen AI platform.</p>
+
+            <!-- ATS Score Badge display (If Candidate) -->
+            <div id="ats-result-container" class="ats-badge-box hidden">
+                <div class="ats-circle">
+                    <span id="ats-score-value">88</span>
+                    <small>ATS SCORE</small>
+                </div>
+                <div class="skills-extracted">
+                    <h4>Top Skills Identified:</h4>
+                    <div id="skills-tags-container" class="tags-flex"></div>
+                </div>
+            </div>
+
+            <p class="redirect-info">Redirecting to your dashboard in <span id="countdown-timer" class="countdown-num">3</span> seconds...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="signup.js"></script>
+</body>
+</html>

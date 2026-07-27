@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate Dashboard · HireGen AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="candidate-dashboard.css">
+</head>
+<body>
+  <div class="noise"></div><div class="cursor-glow"></div><div class="blob blob-one"></div><div class="blob blob-two"></div><canvas id="particles"></canvas>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#top"><span class="brand-mark">H</span><span>HireGen <i>AI</i></span></a>
+    <nav class="menu" aria-label="Main navigation">
+      <a class="active" href="#overview"><span>▦</span><b>Dashboard</b></a><a href="#interview"><span>◉</span><b>AI Interview</b></a><a href="#applications"><span>□</span><b>Applications</b></a><a href="#profile"><span>◎</span><b>Profile</b></a><a href="#settings"><span>⚙</span><b>Settings</b></a>
+    </nav>
+    <div class="sidebar-foot"><div class="upgrade"><small>PRO CANDIDATE</small><strong>Stand out faster.</strong><button class="text-btn">Explore Plus →</button></div><button class="logout"><span>↪</span><b>Log out</b></button></div>
+  </aside>
+  <main id="top">
+    <header class="topbar"><button class="icon-btn mobile-menu" id="menuToggle" aria-label="Open menu">☰</button><label class="search"><span>⌕</span><input type="search" placeholder="Search jobs, skills, or advice…"><kbd>⌘ K</kbd></label><div class="top-actions"><button class="icon-btn" title="Notifications">♧<em></em></button><button class="icon-btn" title="Messages">✉</button><button class="mode-toggle" id="themeToggle" aria-label="Toggle theme">◐</button><button class="assistant-mini" data-chat-open><span>✦</span><b>Ask AI</b></button><button class="avatar" id="profileToggle">SK</button></div></header>
+    <div class="content">
+      <section class="hero reveal" id="overview"><div class="eyebrow"><span></span> CANDIDATE COMMAND CENTER</div><div class="hero-grid"><div><p class="date" id="today"></p><h1>Welcome back,<br><span id="candidateName">Candidate.</span></h1><p class="hero-copy" id="typedGreeting"></p><div class="hero-actions"><button class="primary ripple" id="uploadButton">↑ <span>Upload resume</span></button><button class="secondary ripple" data-scroll="#interview">✦ Start AI interview</button></div></div><div class="hero-orbit"><div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div><div class="orb-center"><span>92</span><small>AI SCORE</small></div><div class="orbit-tag tag-one">+12 ATS</div><div class="orbit-tag tag-two">3 jobs matched</div></div></div></section>
+      <section class="stats-grid reveal"><article class="stat-card"><div class="stat-icon blue">↗</div><div><small>ATS SCORE</small><strong><span data-count="86">0</span><i>/100</i></strong><p class="positive">↑ 8 pts this week</p></div><svg class="spark" viewBox="0 0 120 45"><path d="M2 38 C22 37 22 20 43 25 S67 31 78 16 S96 24 118 4"/></svg></article><article class="stat-card"><div class="stat-icon purple">✦</div><div><small>RESUME STRENGTH</small><strong><span data-count="92">0</span><i>%</i></strong><p class="positive">Excellent profile</p></div><div class="mini-ring" style="--progress:92"></div></article><article class="stat-card"><div class="stat-icon cyan">⌁</div><div><small>JOB MATCH</small><strong><span data-count="78">0</span><i>%</i></strong><p class="positive">12 new matches</p></div><div class="mini-ring" style="--progress:78"></div></article><article class="stat-card"><div class="stat-icon pink">✓</div><div><small>PROFILE COMPLETE</small><strong><span data-count="84">0</span><i>%</i></strong><p>2 actions remaining</p></div><div class="mini-ring" style="--progress:84"></div></article></section>
+      <section class="two-col primary-row reveal"><article class="panel ats-panel"><div class="section-head"><div><span class="eyebrow"><span></span> AI ANALYSIS</span><h2>Your ATS performance</h2></div><button class="more-btn">View report ↗</button></div><div class="ats-content"><div class="gauge" style="--score:86"><div><strong>86</strong><span>/100</span><small>STRONG MATCH</small></div></div><div class="score-list"><div><span>Resume strength</span><b><i style="width:92%"></i></b><strong>92%</strong></div><div><span>Keyword relevance</span><b><i style="width:84%"></i></b><strong>84%</strong></div><div><span>Format & structure</span><b><i style="width:95%"></i></b><strong>95%</strong></div><p>✦ Your resume is more discoverable than <strong>86%</strong> of candidates for Product roles.</p></div></div></article><article class="panel resume-panel"><div class="section-head"><div><span class="eyebrow"><span></span> YOUR RESUME</span><h2>shreya-kapoor-product.pdf</h2></div><button class="dot-btn">•••</button></div><div class="resume-file"><div class="pdf">PDF</div><div><strong>Resume uploaded</strong><p>Updated Jul 22, 2026 · 2.4 MB</p></div><span class="file-check">✓</span></div><div class="resume-actions"><button>⌕ Preview</button><button id="updateResume">↻ Update</button><button class="danger">⌫</button></div><div class="suggestion-inline"><span>✦</span><p><b>AI insight:</b> Add one measurable impact metric to increase your score.</p></div></article></section>
+      <section class="split-section reveal"><div><div class="section-head"><div><span class="eyebrow"><span></span> RESUME INTELLIGENCE</span><h2>What AI found</h2></div><button class="more-btn">Edit details ↗</button></div><div class="extract-grid"><article><span>◌</span><small>SKILLS</small><strong>18</strong><p>Technical & soft skills</p></article><article><span>▧</span><small>PROJECTS</small><strong>04</strong><p>Impactful work samples</p></article><article><span>◷</span><small>EXPERIENCE</small><strong>3.5y</strong><p>Product & growth</p></article><article><span>◇</span><small>EDUCATION</small><strong>01</strong><p>Master’s degree</p></article></div><div class="skill-group"><p>TOP SKILLS</p><div class="chips"><button>Product Strategy</button><button>SQL</button><button>Figma</button><button>Analytics</button><button>Python</button><button>Agile</button></div></div></div><aside class="missing-skills"><span class="eyebrow"><span></span> OPPORTUNITY GAP</span><h3>Skills to unlock more roles</h3><p>Adding these could lift your match rate by 18%.</p><div class="missing-list"><div><b>Docker</b><button>+ Add</button></div><div><b>AWS</b><button>+ Add</button></div><div><b>Redis</b><button>+ Add</button></div><div><b>Kubernetes</b><button>+ Add</button></div></div></aside></section>
+      <section class="reveal"><div class="section-head"><div><span class="eyebrow"><span></span> CAREER COMPASS</span><h2>Roles picked for you</h2></div><div class="scroll-controls"><button id="rolePrev">←</button><button id="roleNext">→</button></div></div><div class="role-track" id="roleTrack"><p class="empty-state">Loading open roles…</p></div></section>
+      <section class="interview panel reveal" id="interview"><div class="interview-copy"><span class="eyebrow"><span></span> PRACTICE WITH AI</span><h2>Interview confidence,<br><em>on demand.</em></h2><p>Run a personalised interview simulation for your next Product Manager role.</p><button class="primary ripple" id="startInterview">✦ Start AI interview</button><small>No prep needed · 15 minutes · Instant feedback</small></div><div class="readiness"><div class="readiness-ring"><span>78<small>%</small></span></div><h3>Interview readiness</h3><div class="readiness-scores"><p>Technical <b><i style="width:82%"></i></b> 82</p><p>Communication <b><i style="width:76%"></i></b> 76</p><p>Confidence <b><i style="width:74%"></i></b> 74</p></div></div></section>
+      <section class="two-col bottom-grid reveal" id="applications"><article class="panel applications"><div class="section-head"><div><span class="eyebrow"><span></span> ACTIVE JOURNEY</span><h2>Applications</h2></div><button class="more-btn">All applications ↗</button></div><div class="table-wrap"><table><thead><tr><th>COMPANY / ROLE</th><th>APPLIED</th><th>STATUS</th><th></th></tr></thead><tbody id="applicationsTableBody"><tr><td colspan="4">Loading your applications…</td></tr></tbody></table></div></article><article class="panel activity"><div class="section-head"><div><span class="eyebrow"><span></span> SIGNALS</span><h2>Recent activity</h2></div></div><div class="timeline"><div><span class="t-icon">↑</span><p><b>Resume analysis refreshed</b><small>Your ATS score rose by 8 points</small></p><time>2h</time></div><div><span class="t-icon purple">✦</span><p><b>New job matches found</b><small>12 roles fit your profile</small></p><time>5h</time></div><div><span class="t-icon cyan">◉</span><p><b>Interview invitation received</b><small>Monk Commerce · Jul 30</small></p><time>1d</time></div></div></article></section>
+      <section class="reveal" id="profile"><div class="section-head"><div><span class="eyebrow"><span></span> NEXT BEST ACTIONS</span><h2>Make your profile impossible to miss</h2></div><button class="more-btn">Manage profile ↗</button></div><div class="action-grid"><article><span>01</span><h3>Link your GitHub</h3><p>Show hiring teams your best work.</p><button>Connect →</button></article><article><span>02</span><h3>Add a portfolio</h3><p>Bring your projects to life.</p><button>Connect →</button></article><article><span>03</span><h3>Upload certificates</h3><p>Verify your specialist skills.</p><button>Upload →</button></article></div></section>
+    </div>
+  </main>
+  <button class="chat-fab" id="chatFab" aria-label="Open AI assistant"><span>✦</span><i></i></button><section class="chat-window" id="chatWindow"><header><div class="ai-face">✦</div><div><b>HireGen Assistant</b><small><i></i> Online now</small></div><button id="closeChat">×</button></header><div class="chat-body"><div class="bot-msg">Hi Shreya! I spotted a few ways to boost your Product Manager applications. What should we work on?</div><div class="quick-prompts"><button>Improve my resume</button><button>Find matching jobs</button><button>Practice an interview</button></div></div><form id="chatForm"><input id="chatInput" placeholder="Ask anything…"><button>↑</button></form></section>
+  <input type="file" id="resumeInput" accept=".pdf" hidden>
+  <div class="toast" id="toast"></div>
+
+  <div class="interview-overlay" id="interviewOverlay">
+    <div class="interview-modal">
+      <header class="interview-modal-head">
+        <div><span class="eyebrow"><span></span> AI INTERVIEW</span><h2 id="interviewRoleTitle">Practice interview</h2></div>
+        <button class="icon-btn" id="closeInterview" aria-label="Close interview">×</button>
+      </header>
+
+      <div class="interview-setup" id="interviewSetup">
+        <p>What role are you practising for?</p>
+        <div class="interview-setup-row">
+          <input type="text" id="interviewRoleInput" placeholder="e.g. Product Manager, Backend Engineer…">
+          <button class="primary ripple" id="interviewSetupStart">Start ✦</button>
+        </div>
+        <small>We’ll generate 5 tailored questions and give you feedback after each answer.</small>
+      </div>
+
+      <div class="interview-loading" id="interviewLoading" hidden>
+        <div class="spinner"></div><p>Preparing your questions…</p>
+      </div>
+
+      <div class="interview-flow" id="interviewFlow" hidden>
+        <div class="interview-progress"><i id="interviewProgressBar"></i></div>
+        <p class="interview-step" id="interviewStep">Question 1 of 5</p>
+        <h3 class="interview-question" id="interviewQuestion"></h3>
+
+        <textarea id="interviewAnswer" rows="5" placeholder="Type your answer here… (aim for the STAR structure: Situation, Task, Action, Result)"></textarea>
+        <div class="interview-flow-actions">
+          <span class="interview-tip" id="interviewTip"></span>
+          <button class="primary ripple" id="interviewSubmitAnswer">Submit answer →</button>
+        </div>
+
+        <div class="interview-feedback" id="interviewFeedback" hidden>
+          <div class="interview-score"><strong id="interviewScoreValue">0</strong><span>/100</span></div>
+          <div class="interview-feedback-text">
+            <p id="interviewFeedbackText"></p>
+            <div class="interview-feedback-pills">
+              <span class="pill good" id="interviewStrength"></span>
+              <span class="pill improve" id="interviewImprove"></span>
+            </div>
+          </div>
+          <button class="secondary ripple" id="interviewNext">Next question →</button>
+        </div>
+      </div>
+
+      <div class="interview-summary" id="interviewSummary" hidden>
+        <div class="interview-summary-ring"><span id="interviewAvgScore">0</span><small>AVG SCORE</small></div>
+        <h3>Nice work — interview complete.</h3>
+        <p id="interviewSummaryCopy"></p>
+        <div class="interview-flow-actions">
+          <button class="secondary ripple" id="interviewRestart">Practice again</button>
+          <button class="primary ripple" id="interviewDone">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="candidate-dashboard.js"></script>
+</body></html>
